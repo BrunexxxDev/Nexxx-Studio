@@ -1,0 +1,551 @@
+/* --- NOVAS VARIÁVEIS DE CORES --- */
+:root {
+    --color-dark: #121212;          /* Preto Suave (Fundo principal) */
+    --color-text-light: #E8ECEF;    /* Cinza Neblina (Texto de contraste) */
+    --color-ciano-futurista: #00C5C8; /* Ciano Futurista (Destaques/Neon) */
+    --color-roxo-neon: #7A2DF6;     /* Roxo Neon Secundário */
+    --color-header-bg: #0d0d0d;     /* Fundo do header (sutilmente mais escuro) */
+}
+
+/* Base e Reset */
+* {
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura total */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    font-family: 'Poppins', sans-serif; /* Define a fonte principal */
+}
+
+body {
+    background-color: var(--color-dark); /* Fundo escuro */
+    color: var(--color-text-light); /* Cor do texto principal */
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* ---------------------------------- */
+/* 1. HEADER / CABEÇALHO (Desktop) */
+/* ---------------------------------- */
+.main-header {
+    background-color: var(--color-header-bg); /* Fundo do cabeçalho */
+    padding: 20px 4%; /* Padding interno */
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Alinha logo à esquerda e navegação à direita */
+    align-items: center; /* Centraliza verticalmente */
+    border-radius: 8px 8px 0 0; /* Arredonda cantos superiores */
+}
+
+/* LOGOTIPO */
+.logo {
+    font-size: 1.2rem; 
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    display: flex; 
+    align-items: center;
+}
+
+/* NAVEGAÇÃO */
+.main-nav ul {
+    list-style: none; /* Remove marcadores de lista */
+    display: flex; /* Links lado a lado */
+    gap: 35px; /* Espaçamento entre os links */
+}
+
+/* Botão Hamburguer (Escondido no Desktop) */
+.menu-toggle {
+    display: none; /* Oculta o botão hamburguer em telas grandes */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove sublinhado */
+    color: var(--color-text-light); /* Cor do texto normal (branco/cinza claro) */
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-bottom: 5px;
+    transition: all 0.3s; /* Transiciona cor e borda suavemente */
+    border-bottom: 2px solid transparent; /* Linha de baixo invisível por padrão */
+}
+
+/* LINK ATIVO e HOVER - O DESTAQUE AZUL COM LINHA */
+.nav-link.active, /* Aplica ao link com a classe 'active' (adicionada pelo JS) */
+.nav-link:hover { /* Aplica ao link sob o mouse */
+    color: var(--color-ciano-futurista); /* Cor ciano (azul futurista) */
+    font-weight: 600;
+    /* Destaque: Usa border-bottom para a linha inferior e cor ciano */
+    border-bottom: 2px solid var(--color-ciano-futurista);
+}
+
+/* ---------------------------------- */
+/* 2. SEÇÃO HERO / PRINCIPAL */
+/* ---------------------------------- */
+.hero-section {
+    position: relative; 
+    background-color: var(--color-dark);
+    margin-top: 5px;
+    padding: 85px 5%; 
+    min-height: auto;
+    background-image: url('imagens/hero.png'); /* Caminho para a imagem de fundo */
+    background-repeat: no-repeat;
+    background-size: 100% 115%; 
+    background-position: center; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden; 
+}
+
+/* Conteúdo de Texto e Botão */
+.hero-content {
+    height: 100%;
+    width: auto;
+    z-index: 10; 
+    margin-right: auto;
+}
+
+.hero-section h2 {
+    font-size: 3.2rem;
+    font-weight: 900; 
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+    max-width: 80%;
+}
+
+/* Botão CTA (Comece Seu Projeto) */
+.btn-hero-cta {
+    display: inline-block;
+    background-color: var(--color-ciano-futurista);
+    color: var(--color-dark); 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 35px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 197, 200, 0.5); /* Efeito de brilho */
+}
+
+.btn-hero-cta:hover {
+    background-color: #00e0e3; /* Cor mais clara no hover */
+}
+
+/* ---------------------------------- */
+/* 3. SEÇÃO NOSSOS SERVIÇOS */
+/* ---------------------------------- */
+.services-section {
+    padding: 80px 5%; /* Padding vertical e lateral */
+    background-color: var(--color-dark);
+}
+
+.services-section h2 {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    text-align: left; 
+    margin-bottom: 30px;
+    color: white;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0; 
+}
+
+.services-container {
+    display: flex; /* Alinha os cards lado a lado */
+    justify-content: space-between;
+    gap: 30px; /* Espaço entre os cards */
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.service-card {
+    position: relative;
+    flex: 1; 
+    max-width: 350px;
+    background-color: #1a1a1a; /* Fundo do card */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    border-color: var(--color-ciano-futurista);
+    box-shadow: 0 0 15px rgba(0, 197, 200, 0.2);
+}
+
+/* Ícones (Tags IMG) */
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    object-fit: contain; 
+}
+
+/* Títulos dos Cards */
+.service-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Descrição dos Cards */
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Detalhe decorativo (canto) */
+.card-corner-detail {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    transform: translate(-10px, -10px);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    transform: translate(10px, 10px);
+}
+
+
+/* ---------------------------------- */
+/* 4. SEÇÃO PROJETOS EM DESTAQUE / CTA */
+/* ---------------------------------- */
+.projects-cta-section {
+    position: relative;
+    padding: 100px 4%; 
+    height: max-content;
+    background-image: url('imagens/faleconosco.png'); /* Imagem de fundo */
+    background-repeat: no-repeat;
+    background-size: 100% 115%; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.projects-cta-content {
+    max-width: 45%;
+    z-index: 10;
+}
+
+.section-tag {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-ciano-futurista);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.projects-cta-content h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Botão Secundário CTA ("FALE CONOSCO") */
+.btn-secondary-cta {
+    display: inline-block;
+    background-color: var(--color-ciano-futurista);
+    color: var(--color-dark); 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 35px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 197, 200, 0.7); 
+}
+
+.btn-secondary-cta:hover {
+    background-color: #00e0e3;
+    box-shadow: 0 0 25px rgba(0, 197, 200, 1); 
+}
+
+
+/* SHOWCASE DE PROJETOS */
+.projects-showcase {
+    display: flex;
+    gap: 40px;
+    align-items: flex-end; 
+    position: relative;
+    z-index: 10;
+}
+
+.project-item {
+    text-align: center;
+}
+
+.device-mockup {
+    width: 250px; 
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(0, 197, 200, 0.8)) drop-shadow(0 0 10px rgba(122, 45, 246, 0.8));
+    transition: transform 0.3s;
+}
+
+.device-mockup:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+}
+
+.project-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------- */
+/* 5. RODAPÉ */
+/* ---------------------------------- */
+.main-footer {
+    background-color: var(--color-header-bg); /* Fundo escuro */
+    color: var(--color-text-light);
+    padding: 30px 4%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Reutiliza o estilo do logo do header */
+.footer-logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* Estilo do texto de Copyright */
+.copyright {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+/* Ícones de Redes Sociais */
+.social-icons a {
+    color: var(--color-ciano-futurista); /* Cor ciano para os ícones */
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: white; /* Brilho no hover */
+}
+
+
+/* ============================================== */
+/* CSS RESPONSIVO: MOBILE E TABLET PEQUENO (max-width: 768px) */
+/* ============================================== */
+
+@media (max-width: 768px) {
+    
+    /* --- CONFIGURAÇÕES GERAIS --- */
+    .main-header, .hero-section, .services-section, .projects-cta-section, .main-footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* --- 1. HEADER / CABEÇALHO (Mobile) --- */
+    .main-header {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    /* ESTILIZA E MOSTRA O BOTÃO HAMBÚRGUER */
+    .menu-toggle {
+        display: block; /* Torna o botão visível no mobile */
+        background: transparent;
+        border: none;
+        color: var(--color-ciano-futurista);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 200; 
+        padding: 5px;
+    }
+
+    /* Regra para o ícone X quando o menu está aberto */
+    .menu-toggle .fa-times {
+        color: white; 
+    }
+
+    /* ESTADO INICIAL: ESCONDE A NAVEGAÇÃO */
+    .main-nav {
+        position: fixed; /* Fixa o menu */
+        top: 0;
+        right: -100%; /* <<<<<< ESCONDE O MENU FORA DA TELA */
+        width: 100%;
+        max-width: 300px; /* Largura do menu lateral */
+        height: 100%; /* Altura total da tela */
+        background-color: var(--color-header-bg);
+        z-index: 100;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out; /* Transição de deslize suave */
+        padding-top: 80px; 
+        display: block; 
+    }
+    
+    /* ESTADO FINAL: MOSTRA A NAVEGAÇÃO (Ativado pelo JS) */
+    .main-nav.open { 
+        right: 0; /* <<<<<< DESLIZA O MENU PARA A POSIÇÃO VISÍVEL */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Empilha links verticalmente */
+        gap: 0;
+        display: block; 
+    }
+    
+    .main-nav ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separador de links */
+    }
+
+    .main-nav .nav-link {
+        display: block;
+        padding: 15px 25px;
+        text-align: left;
+        font-size: 1.1rem;
+        border-bottom: none; /* Remove a linha azul de destaque do desktop */
+    }
+    
+    /* Estilo para hover/active no mobile */
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+        background-color: #1a1a1a; /* Fundo sutil para o item ativo/hover no mobile */
+        color: var(--color-ciano-futurista);
+    }
+
+    /* --- 2. SEÇÃO HERO / PRINCIPAL --- */
+    .hero-section {
+        height: 400px;
+        padding: auto 5%;
+        background-size: 100% 100%; 
+        background-size: auto 100%; 
+        background-position: center right -23px; 
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-section h2 {
+        font-size: 2rem; 
+        line-height: 1.03;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .btn-hero-cta {
+        width: 75%;
+        padding: 12px;
+    }
+
+    /* --- 3. SEÇÃO NOSSOS SERVIÇOS --- */
+    .services-section h2 {
+        text-align: center;
+    }
+    
+    .services-container {
+        flex-direction: column; /* Cards empilhados */
+        gap: 20px;
+    }
+    
+    .service-card {
+        max-width: 100%; 
+    }
+
+    /* --- 4. SEÇÃO PROJETOS EM DESTAQUE / CTA --- */
+    .projects-cta-section {
+        flex-direction: column; /* Conteúdo e showcase empilhados */
+        padding: 40px 2%;
+        min-height: auto;
+        background-size: auto 100%; 
+        background-position: center bottom;
+        background-position-x: right;
+    }
+    
+    .projects-cta-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .projects-cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .btn-secondary-cta {
+        width: 100%;
+    }
+    
+    .projects-showcase {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    
+    .device-mockup {
+        width: 180px; 
+    }
+    
+    /* --- 5. RODAPÉ --- */
+    .footer-container {
+        flex-direction: column; 
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        margin: 0 10px; 
+    }
+}
