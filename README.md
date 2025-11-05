@@ -1,6 +1,6 @@
-# Nexx Studio Website
+# Nexxx Studio Website
 
-This repository contains the source code for the Nexx Studio official website, a modern and responsive landing page built with HTML, CSS, and JavaScript.
+This repository contains the source code for the Nexxx Studio official website, a modern and responsive landing page built with HTML, CSS, and JavaScript.
 
 ## 🚀 About the Project
 
