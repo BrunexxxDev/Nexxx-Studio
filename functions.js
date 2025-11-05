@@ -1,3 +1,14 @@
+/**
+ * @file functions.js
+ * @description Handles interactive functionalities for the Nexx Studio website,
+ * including the mobile navigation menu and active link highlighting.
+ */
+
+/**
+ * Executes when the DOM is fully loaded.
+ * Initializes all event listeners for the page.
+ * @listens DOMContentLoaded
+ */
 document.addEventListener('DOMContentLoaded', function() {
     // Seleciona o botão de alternância do menu (hambúrguer)
     const menuToggle = document.querySelector('.menu-toggle');
@@ -10,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. FUNCIONALIDADE DO MENU HAMBURGUER (MOBILE)
     // ===================================
     if (menuToggle && mainNav) {
+        /**
+         * Toggles the mobile menu's visibility when the hamburger icon is clicked.
+         * It adds or removes the 'open' class to the navigation menu and swaps
+         * the hamburger icon with a close icon.
+         * @listens click
+         */
         menuToggle.addEventListener('click', function() {
             // ESSENCIAL: Alterna a classe 'open' na tag <nav> para o CSS exibir o menu
             mainNav.classList.toggle('open'); 
@@ -31,6 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================================
     if (navLinks.length > 0) {
         navLinks.forEach(link => {
+            /**
+             * Handles the 'active' state for navigation links.
+             * When a link is clicked, it removes the 'active' class from all links,
+             * adds it to the clicked link, and closes the mobile menu if it's open.
+             * @param {Event} event - The click event object.
+             * @listens click
+             */
             link.addEventListener('click', function(event) {
                 // Impede a navegação padrão (para que o destaque funcione sem recarregar)
                 event.preventDefault(); 
